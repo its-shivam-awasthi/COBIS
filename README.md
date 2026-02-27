@@ -1,25 +1,25 @@
 # COBIS (Center Oriented Binary Insertion Sort)
 
-##COLBI & COBBI Sorting Suite
+## COLBI & COBBI Sorting Suite
 A collection of stable, adaptive sorting algorithms designed to bridge the gap between textbook sorting and real-world data patterns. This suite utilizes COBIS (Center-Oriented Binary Insertion) as a high-efficiency leaf-level engine, combined with Galloping Merges to accelerate performance on structured data.
 
 ### 🚀 The Three Variations
-COLBI-Iter (Iterative): A bottom-up merge sort that avoids Python's recursion depth limits. It is robust for general-purpose sorting and handles large datasets predictably.
-COLBI-Rec (Recursive): A top-down implementation that is highly optimized for Python by leveraging the built-in bisect module for its leaf-sorting stage.
-COBBI-Blocked (Chunked/Blocked): A hybrid approach that maintains local blocks and utilizes block-maxima metadata to quickly locate insertion points, making it ideal for clustered data or heavy duplicates.
+- COLBI-Iter (Iterative): A bottom-up merge sort that avoids Python's recursion depth limits. It is robust for general-purpose sorting and handles large datasets predictably.
+- COLBI-Rec (Recursive): A top-down implementation that is highly optimized for Python by leveraging the built-in bisect module for its leaf-sorting stage.
+- COBBI-Blocked (Chunked/Blocked): A hybrid approach that maintains local blocks and utilizes block-maxima metadata to quickly locate insertion points, making it ideal for clustered data or heavy duplicates.
 
 ### 🧠 What is COBIS?
 COBIS (Center-Oriented Binary Insertion Sort) is an optimized version of the standard binary insertion sort used as the "base case" for these algorithms.
 
 #### How it Works:
-Unlike standard insertion sort which starts its search from index 0, COBIS performs a Center-Out Decision:
-It compares the new element against the median of the currently sorted list.
-It immediately narrows the search space to either the left half or the right half.
-It then executes a standard binary search (upper bound) only within that narrowed range.
-Why COBIS is Superior:
-Comparison Efficiency: On average, COBIS reduces the total number of comparisons by making a high-level heuristic decision before the binary search begins.
-Locality of Reference: It prioritizes the middle of the array, which is often more stable in CPU caches than the extreme ends.
-Stability Integration: It is natively designed to handle parallel "sequence" arrays, ensuring that the relative order of equal elements is perfectly preserved.
+- Unlike standard insertion sort which starts its search from index 0, COBIS performs a Center-Out Decision:
+- It compares the new element against the median of the currently sorted list.
+- It immediately narrows the search space to either the left half or the right half.
+
+#### Why COBIS is Superior:
+- Comparison Efficiency: On average, COBIS reduces the total number of comparisons by making a high-level heuristic decision before the binary search begins.
+- Locality of Reference: It prioritizes the middle of the array, which is often more stable in CPU caches than the extreme ends.
+- Stability Integration: It is natively designed to handle parallel "sequence" arrays, ensuring that the relative order of equal elements is perfectly preserved.
 
 ---
 
