@@ -33,11 +33,12 @@ In the Blocked version, COBIS manages the internal state of each block. When a b
 
 ### 📊 Performance Benchmark (10,000 Elements)
 Results based on pure Python implementation benchmarks.
-Scenario COLBI-Iter COLBI-Rec COBBI-Blocked Std Merge Sort
-Nearly Sorted 0.041s 0.018s 0.083s 0.061s
-Heavy Duplicates 0.066s 0.035s 0.074s 0.061s
-Reverse Sorted 0.031s 0.014s 0.059s 0.041s
-Random Ints 0.126s 0.081s 0.134s 0.084s
+| Scenario | COLBI-Iter | COLBI-Rec | COBBI-Blocked | Std Merge Sort |
+| :--- | :---: | :---: | :---: | ---: |
+| Nearly Sorted | 0.041s | 0.018s | 0.083s | 0.061s |
+| Heavy Duplicates | 0.066s | 0.035s | 0.074s | 0.061s |
+| Reverse Sorted | 0.031s | 0.014s | 0.059s | 0.041s |
+| Random Ints | 0.126s | 0.081s | 0.134s | 0.084s |
 
 ### 💻 Quick Start
 
